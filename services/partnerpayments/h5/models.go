@@ -532,10 +532,9 @@ func (o PrepayRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["sub_appid"] = o.SubAppid
 	}
 
-	if o.SubMchid == nil {
-		return nil, fmt.Errorf("field `SubMchid` is required and must be specified in PrepayRequest")
+	if o.SubMchid != nil {
+		toSerialize["sub_mchid"] = o.SubMchid
 	}
-	toSerialize["sub_mchid"] = o.SubMchid
 
 	if o.Description == nil {
 		return nil, fmt.Errorf("field `Description` is required and must be specified in PrepayRequest")
